@@ -1,0 +1,21 @@
+name: advent of code ci
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  aoc-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo code
+        uses: actions/checkout@f095bcc56b7c2baf48f3ac70d6d6782f4f553222
+
+      - uses: actions/setup-node@5ef044f9d09786428e6e895be6be17937becee3a
+        with:
+          node-version: 18
+
+      - run: npm install
+
+      - name: Run tests
+        run: npm run test
