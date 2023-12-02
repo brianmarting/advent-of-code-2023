@@ -1,4 +1,5 @@
-import { calculateSum, getFirstAndLastNumber } from "../../src/1/trebuchet";
+import { calculateSum, getFirstAndLastNumber } from '../../src/1/trebuchet';
+import { trebuchetTestData } from './trebuchet.test.data';
 
 describe('Trebuchet', () => {
 
@@ -13,6 +14,14 @@ describe('Trebuchet', () => {
         const result = calculateSum(input);
 
         expect(result).toEqual(142);
+    });
+
+    it('should process all inputs from site correctly', () => {
+        const input = [...trebuchetTestData]
+
+        const result = calculateSum(input);
+
+        expect(result).toEqual(54927);
     });
 
     it.each([
