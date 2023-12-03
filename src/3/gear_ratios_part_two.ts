@@ -4,7 +4,7 @@ export class GearRatioSymbol {
 
     x: number;
     y: number;
-    value: string;
+    adjacentNumbers: GearRatioNumber[];
 }
 
 export class GearRatioNumber {
@@ -48,9 +48,14 @@ export function calculateSum(input: string[]): number {
         }
     }
 
-    return numbers
-        .map(({ value }: GearRatioNumber) => +value)
-        .reduce((previous, current) => previous + current);
+    return symbols
+        .map(({ adjacentNumbers }: GearRatioSymbol) => adjacentNumbers)
+        .filter((adjacentNumbers: GearRatioNumber[]) => adjacentNumbers.length === 2)
+        .map((adjacentNumbers: GearRatioNumber[]) => adjacentNumbers
+            .map(({ value }: GearRatioNumber) => +value)
+            .reduce((previous, current) => previous * current)
+        )
+        .reduce((previous: number, current: number) => previous + current)
 }
 
 export const gatherSymbols = (input: string[]): GearRatioSymbol[] => {
@@ -62,11 +67,11 @@ export const gatherSymbols = (input: string[]): GearRatioSymbol[] => {
         for (let x = 0; x < line.length; x++) {
             const character = line.charAt(x);
 
-            if (character !== '.' && !isNumber(character)) {
+            if (character === '*') {
                 symbols.push({
                     x: x,
                     y: y,
-                    value: character,
+                    adjacentNumbers: [],
                 });
             }
         }
@@ -81,11 +86,12 @@ const initializeNumber = () => <GearRatioNumber>{
 
 export const isInRange = (number: GearRatioNumber, symbols: GearRatioSymbol[]): boolean => {
     for (let i = number.fromX; i <= number.toX; i++) {
-        for (const { x, y } of symbols) {
+        for (const { x, y, adjacentNumbers } of symbols) {
             if (
                 (i - 1 === x || i === x || i + 1 === x) &&
                 (number.y - 1 === y || number.y === y || number.y + 1 === y)
             ) {
+                adjacentNumbers.push(number);
                 return true;
             }
         }
