@@ -3,10 +3,10 @@ import {
     calculateCurrentGameSatchelDraws,
     calculateSum,
     Satchel
-} from '../../src/2/cube_conundrum';
+} from '../../src/2/cube_conundrum_part_one';
 import { cubeConundrumTestData } from './cube_conundrum.test.data';
 
-describe('Cube conundrum', () => {
+describe('Cube conundrum part one', () => {
 
     describe('should calculate all inputs correctly', () => {
         it('with default single satchel draw', () => {
