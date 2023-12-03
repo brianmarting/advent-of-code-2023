@@ -1,5 +1,5 @@
-import { trebuchetTestData } from "./trebuchet.test.data";
 import { calculateSum, getFirstAndLastNumber } from "../../src/1/trebuchet_part_one";
+import { getInput } from "../util/input_util";
 
 describe('Trebuchet part one', () => {
 
@@ -28,7 +28,7 @@ describe('Trebuchet part one', () => {
     });
 
     it('should process all inputs correctly', () => {
-        const input = [...trebuchetTestData]
+        const input = getInput('trebuchet.txt', 1);
 
         const result = calculateSum(input);
 

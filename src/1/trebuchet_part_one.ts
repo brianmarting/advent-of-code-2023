@@ -1,3 +1,5 @@
+import { isNumber } from "../util/number_util";
+
 export function calculateSum(input: string[]): number {
     return (input || [])
         .map((value: string) => getFirstAndLastNumber(value))
@@ -20,8 +22,4 @@ export function getFirstAndLastNumber(input: string): number {
     }
 
     return +numbers;
-}
-
-const isNumber = (input: string) => {
-    return /^\d+$/.test(input);
 }

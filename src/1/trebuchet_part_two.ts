@@ -1,3 +1,5 @@
+import { isNumber } from "../util/number_util";
+
 const names: string[] = [
     'one',
     'two',
@@ -47,8 +49,4 @@ const replaceNamesWithNumberValues = (line: string): string => {
     });
 
     return line;
-}
-
-const isNumber = (input: string) => {
-    return /^\d+$/.test(input);
 }

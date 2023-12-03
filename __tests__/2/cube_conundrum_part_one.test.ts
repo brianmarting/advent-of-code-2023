@@ -4,7 +4,7 @@ import {
     calculateSum,
     Satchel
 } from '../../src/2/cube_conundrum_part_one';
-import { cubeConundrumTestData } from './cube_conundrum.test.data';
+import { getInput } from "../util/input_util";
 
 describe('Cube conundrum part one', () => {
 
@@ -61,7 +61,7 @@ describe('Cube conundrum part one', () => {
     });
 
     it('should calculateSum', () => {
-        const input = [...cubeConundrumTestData];
+        const input = getInput('cube_conundrum.txt', 2);
 
         const result = calculateSum(input);
 
