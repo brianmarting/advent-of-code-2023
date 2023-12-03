@@ -1,7 +1,7 @@
-import { calculateSum, getFirstAndLastNumber } from '../../src/1/trebuchet';
-import { trebuchetTestData } from './trebuchet.test.data';
+import { trebuchetTestData } from "./trebuchet.test.data";
+import { calculateSum, getFirstAndLastNumber } from "../../src/1/trebuchet_part_one";
 
-describe('Trebuchet', () => {
+describe('Trebuchet part one', () => {
 
     it('should process all inputs correctly', () => {
         const input = [
@@ -16,14 +16,6 @@ describe('Trebuchet', () => {
         expect(result).toEqual(142);
     });
 
-    it('should process all inputs from site correctly', () => {
-        const input = [...trebuchetTestData]
-
-        const result = calculateSum(input);
-
-        expect(result).toEqual(54927);
-    });
-
     it.each([
         ['1abc2', 12],
         ['pqr3stu8vwx', 38],
@@ -33,5 +25,13 @@ describe('Trebuchet', () => {
         const result = getFirstAndLastNumber(testCase);
 
         expect(result).toEqual(expected);
+    });
+
+    it('should process all inputs correctly', () => {
+        const input = [...trebuchetTestData]
+
+        const result = calculateSum(input);
+
+        expect(result).toEqual(54927);
     });
 });
