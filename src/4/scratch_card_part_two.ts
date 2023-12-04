@@ -8,8 +8,8 @@ export class ScratchCard {
 
 export function calculateSum(input: string[]): number {
     const lines = (input || [])
-        .map((line: string, index: number) => line.split(` ${index + 1}: `) as [string, string])
-        .map(([, line]: [string, string]) => line)
+        .map((line: string, index: number) => line.split(` ${index + 1}: `))
+        .map(([, line]: string[]) => line)
 
     const scratchCards: ScratchCard[] = createScratchCards(lines.length);
 
@@ -31,13 +31,13 @@ export function calculateSum(input: string[]): number {
 }
 
 export function calculateAmountOfWinningNumbers(line: string): number {
-    const [winningNumbers, yourNumbers]: [number[], number[]] = line.split(' | ')
+    const [winningNumbers, yourNumbers]: number[][] = line.split(' | ')
         .map((item: string) => item
             .trim()
             .split(' ')
             .map((number: string) => +number)
             .filter((number: number) => number !== 0)
-        ).map((numbers: number[]) => _.uniq(numbers)) as [number[], number[]];
+        ).map((numbers: number[]) => _.uniq(numbers));
 
     return yourNumbers
         .filter(number => winningNumbers.indexOf(number) !== -1)

@@ -2,18 +2,18 @@ import _ from "lodash";
 
 export function calculateSum(input: string[]): number {
     return (input || [])
-        .map((line: string, index: number) => line.split(` ${index + 1}: `) as [string, string])
-        .map(([, line]: [string, string]) => line)
+        .map((line: string, index: number) => line.split(` ${index + 1}: `))
+        .map(([, line]: string[]) => line)
         .map((line: string) => calculatePoints(line))
         .reduce((previous, current) => previous + current);
 }
 
 export function calculatePoints(line: string): number {
-    const [winningNumbers, yourNumbers]: [number[], number[]] = line.split(' | ')
+    const [winningNumbers, yourNumbers]: number[][] = line.split(' | ')
         .map((item: string) => item.trim().split(' ')
             .map((number: string) => +number)
             .filter((number: number) => number !== 0)
-        ).map((numbers: number[]) => _.uniq(numbers)) as [number[], number[]];
+        ).map((numbers: number[]) => _.uniq(numbers));
 
     const yourWinningNumbers = yourNumbers
         .filter(number => winningNumbers.indexOf(number) !== -1);
