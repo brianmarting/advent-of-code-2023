@@ -42,7 +42,7 @@ export function getFirstAndLastNumber(input: string): number {
 // e.g. eighthree becomes 83 and not 8hree, to take into consideration ... not explained on the site
 const replaceNamesWithNumberValues = (line: string): string => {
     names.forEach((name, index) => {
-        line = line.replace(
+        line = line.replaceAll(
             name,
             name + (index + 1) + name,
         );

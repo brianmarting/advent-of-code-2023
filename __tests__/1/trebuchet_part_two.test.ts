@@ -39,6 +39,6 @@ describe('Trebuchet part two', () => {
 
         const result = calculateSum(input);
 
-        expect(result).toEqual(54591);
+        expect(result).toEqual(54581);
     });
 });
