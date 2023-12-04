@@ -22,7 +22,7 @@ describe('Trebuchet part two', () => {
         const input = [
             'two1nine',
             'eightwothree',
-            'abcone2threexyz',
+            'abcone2threethreexyz',
             'xtwone3four',
             '4nineeightseven2',
             'zoneight234',
