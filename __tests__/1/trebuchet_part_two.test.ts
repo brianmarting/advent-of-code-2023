@@ -35,7 +35,7 @@ describe('Trebuchet part two', () => {
     });
 
     it('should process all inputs correctly', () => {
-        const input = getInput('trebuchet.txt', 1);
+        const input = getInput('input.txt', 1);
 
         const result = calculateSum(input);
 

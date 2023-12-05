@@ -35,7 +35,7 @@ describe('Cube conundrum part two', () => {
     });
 
     it('should calculateSum', () => {
-        const input = getInput('cube_conundrum.txt', 2);
+        const input = getInput('input.txt', 2);
 
         const result = calculateSum(input);
 

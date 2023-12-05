@@ -27,7 +27,7 @@ describe('Scratch card part one', () => {
     });
 
     it('should calculate sum from site input', () => {
-        const input = getInput('scratch_card.txt', 4);
+        const input = getInput('input.txt', 4);
 
         const result = calculateSum(input);
 

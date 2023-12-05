@@ -44,7 +44,7 @@ describe('Gear ratios part two', () => {
     });
 
     it('should calculate sum from site example', () => {
-        const input = getInput('gear_ratios.txt', 3);
+        const input = getInput('input.txt', 3);
 
         const result = calculateSum(input);
 
