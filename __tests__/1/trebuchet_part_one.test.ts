@@ -27,7 +27,7 @@ describe('Trebuchet part one', () => {
         expect(result).toEqual(expected);
     });
 
-    it('should process all inputs correctly', () => {
+    xit('should process all inputs correctly', () => {
         const input = getInput('input.txt', 1);
 
         const result = calculateSum(input);

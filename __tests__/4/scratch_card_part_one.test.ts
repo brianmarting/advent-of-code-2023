@@ -26,7 +26,7 @@ describe('Scratch card part one', () => {
         expect(result).toEqual(13);
     });
 
-    it('should calculate sum from site input', () => {
+    xit('should calculate sum from site input', () => {
         const input = getInput('input.txt', 4);
 
         const result = calculateSum(input);

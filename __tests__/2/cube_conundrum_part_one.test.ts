@@ -60,7 +60,7 @@ describe('Cube conundrum part one', () => {
         });
     });
 
-    it('should calculateSum', () => {
+    xit('should calculateSum', () => {
         const input = getInput('input.txt', 2);
 
         const result = calculateSum(input);

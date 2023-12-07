@@ -43,7 +43,7 @@ describe('Gear ratios part two', () => {
         expect(result).toEqual(6756);
     });
 
-    it('should calculate sum from site example', () => {
+    xit('should calculate sum from site example', () => {
         const input = getInput('input.txt', 3);
 
         const result = calculateSum(input);

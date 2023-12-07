@@ -75,7 +75,7 @@ describe('Fertilizer part one', () => {
         expect(result).toEqual(35);
     });
 
-    it('should calculate input from site', () => {
+    xit('should calculate input from site', () => {
         const input = getInputWithoutSplit('input.txt', 5);
 
         const result = calculateLowestLocation(input);

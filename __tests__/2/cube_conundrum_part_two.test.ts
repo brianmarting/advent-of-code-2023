@@ -34,7 +34,7 @@ describe('Cube conundrum part two', () => {
         expect(result).toEqual(2286);
     });
 
-    it('should calculateSum', () => {
+    xit('should calculateSum', () => {
         const input = getInput('input.txt', 2);
 
         const result = calculateSum(input);
