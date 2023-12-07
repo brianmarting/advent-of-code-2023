@@ -6,3 +6,8 @@ export const getInput = (filename: string, day: number): string[] => {
         .trim()
         .split('\n');
 }
+
+export const getInputWithoutSplit = (filename: string, day: number): string => {
+    return fs.readFileSync(path.resolve(__dirname, `../${day}/${filename}`), "utf-8")
+        .trim();
+}
